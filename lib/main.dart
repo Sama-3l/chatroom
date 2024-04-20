@@ -1,6 +1,7 @@
 import 'package:chatroom/algorithms/websocket_service.dart';
 import 'package:chatroom/business_logic/cubits/changeChatSession/change_chat_session_cubit.dart';
 import 'package:chatroom/business_logic/cubits/editSessionName/edit_session_name_cubit.dart';
+import 'package:chatroom/business_logic/cubits/messageAdded/message_added_cubit.dart';
 import 'package:chatroom/constants/colors.dart';
 import 'package:chatroom/data/models/message.dart';
 import 'package:chatroom/data/models/session.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => ChangeChatSessionCubit()),
-        BlocProvider(create: (context) => EditSessionNameCubit())
+        BlocProvider(create: (context) => EditSessionNameCubit()),
+        BlocProvider(create: (context) => MessageAddedCubit())
       ],
       child: MaterialApp(
           title: 'Flutter Demo',
